@@ -15,6 +15,7 @@ client.get('users/search.json', params, function(error, tweets, response) {
   }
 });
 
+
 // Defining methods for the booksController
 module.exports = {
     search: function(req: express.Request, res: express.Response) {
@@ -28,9 +29,13 @@ module.exports = {
       client.get('users/search.json', QUERY, function(error, users, response) {
         if(error) throw new Error(error)
         
-        const USER_LIST = users.map((user:any) => user.screen_name)
+        const USER_LIST = users.map((user:any) => ({
+          screen_name: user.screen_name,
+          id: user.id,
+        }))
         console.log(USER_LIST);
         res.json(USER_LIST)
       });
     },
+
 };
