@@ -10,4 +10,4 @@ ROUTER.route("/search")
 ROUTER.route("/show")
   .get(usersController.show)
 
-module.exports = ROUTER;
+export default ROUTER;
