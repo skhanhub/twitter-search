@@ -2,6 +2,7 @@ import express from 'express';
 import logger from 'morgan';
 import fs from 'fs';
 import path from 'path';
+import routes from './routes';
 
 // Port on which incoming requests will arrive
 const PORT = process.env.PORT || 3001;
@@ -22,8 +23,8 @@ APP.use(express.json());
 // support urlencode
 APP.use(express.urlencoded({ extended: false }));
 
-
-
+// Add routes, both API and view
+APP.use(routes);
 
 // Run the web APP and store the returned variable for later export
 const SERVER = APP.listen(PORT, () => console.log(`Listening on ${PORT}`));
