@@ -65,7 +65,7 @@ module.exports = {
           client,
           'users/show.json', 
           {
-            screen_name: req.query.q
+            id: req.query.q
           }
         );
 
@@ -73,7 +73,7 @@ module.exports = {
           client,
           'statuses/user_timeline.json', 
           {
-            screen_name: USER.screen_name,
+            id: USER.id,
             count: 5,
           }
         );
