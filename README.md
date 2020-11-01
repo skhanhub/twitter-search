@@ -1,6 +1,6 @@
 # twitter-search
 
-This project demonstrates how to build a URL shortening service. Users can paste any long URL into the form, and they will get back a shorter URL. The user can later use that shorter URL to fetch the same resource at any given time.
+This project demonstrates how to use twitter API. Users can search twitter using the web form.
 
 
 The application uses the following technologies:
