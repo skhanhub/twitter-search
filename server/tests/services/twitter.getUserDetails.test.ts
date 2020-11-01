@@ -13,7 +13,7 @@ describe("Tests for the getUserDetails function in the twitter service", () => {
     }
       
     //Act
-    const result = await twitter.getUserDetails(27830610);
+    const result = await twitter.getUserDetails("WFP");
 
     //Assert
     expect(result.name).toEqual(correctResult.name);
