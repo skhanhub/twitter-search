@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from "redux"
 import reduxThunk from "redux-thunk"
-import logger from "redux-logger"
 import { Provider } from "react-redux"
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -10,7 +9,7 @@ import rootReducer from "./store/reducers";
 
 
 const store = () =>
-  createStore(rootReducer, {}, applyMiddleware(reduxThunk, logger));
+  createStore(rootReducer, {}, applyMiddleware(reduxThunk));
 
 ReactDOM.render(
   <Provider store={store()}>
