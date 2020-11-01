@@ -9,6 +9,7 @@ const port = process.env.PORT || 3001;
 // Create the application
 const app = express();
 
+// Create a lod directory
 const logDir = './logs';
 if (!fs.existsSync(logDir)){
   fs.mkdirSync(logDir);
