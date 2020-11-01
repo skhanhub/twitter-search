@@ -15,6 +15,11 @@ The application uses the following technologies:
 
 To run this project, you will need a Twitter developer account
 
+Following Twitter, API endpoints are used:
+1. users/search.json
+2. users/show.json
+3. statuses/user_timeline.json
+
 Please visit https://developer.twitter.com/en/docs/twitter-api for more information
 
 Set the following environment variables:
