@@ -1,6 +1,6 @@
 # twitter-search
 
-This project demonstrates how to use twitter API. Users can search twitter using the web form.
+This project demonstrates how to use Twitter API. Users can search for Twitter using the web form.
 
 
 The application uses the following technologies:
@@ -13,7 +13,7 @@ The application uses the following technologies:
 
 ## Getting Started
 
-To run this project you will need a twitter developer account
+To run this project, you will need a Twitter developer account
 
 Please visit https://developer.twitter.com/en/docs/twitter-api for more information
 
@@ -134,9 +134,9 @@ npm start
 
 ## Future Improvements
 
-1. Improve error handleing and css styles.
+1. Improve error handling and CSS styles.
 2. More unit tests.
-3. Mock express res.sendFile() (Currently need to build the client for this route to work. Will crate a stub in the future)
+3. Mock express res.sendFile() (Currently need to build the client for this route to work. Will create a stub in the future)
 
 ## FAQ
 
