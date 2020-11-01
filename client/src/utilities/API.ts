@@ -5,8 +5,8 @@ export default {
         const result = await axios.get(`/api/users/search?q=${search}&count=${rowsPerPage}&page=${page}`);
         return result.data;
     },
-    getUserDetails: async function(id: number){
-      const result = await axios.get(`/api/users/show?q=${id}`);
+    getUserDetails: async function(screen_name: string){
+      const result = await axios.get(`/api/users/show?q=${screen_name}`);
       return result.data;
   }
 }

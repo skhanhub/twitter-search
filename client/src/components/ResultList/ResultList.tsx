@@ -39,7 +39,7 @@ function ResultList() {
               <ListItem 
                 button 
                 key={user.id}
-                onClick={event=>history.push(`/UserProfile/${user.id}`)}
+                onClick={event=>history.push(`/UserProfile/${user.screen_name}`)}
               >
                 <ListItemText primary={user.screen_name} secondary={user.name} />
               </ListItem>

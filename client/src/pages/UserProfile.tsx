@@ -25,14 +25,14 @@ const useStyles = makeStyles({
 
 export default function App() {
   const classes = useStyles();
-  const { id }: any = useParams();
+  const { screen_name }: any = useParams();
   const dispatch = useDispatch();
   const user = useSelector((state: any) => state.getData.userDetails)
   const loading: boolean = useSelector((state: any) => state.getData.loading)
   const history = useHistory();
 
   useEffect(()=>{
-    if(id) dispatch(getUserDetails(id));
+    if(screen_name) dispatch(getUserDetails(screen_name));
   }, [])
 
   return (

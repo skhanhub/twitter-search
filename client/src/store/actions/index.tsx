@@ -9,6 +9,7 @@ export const searchUsers = (search: string, page: number, rowsPerPage: number) =
       const DATA = await API.searchUsers(search, page, rowsPerPage);
       dispatch({ type: SEARCH_USERS, payload: DATA })
     }
+    dispatch({ type: ERROR, payload: null })
     dispatch({ type: LOADING, payload: false })
   } catch (e) {
     dispatch({ type: ERROR, payload: e.message })
@@ -18,12 +19,13 @@ export const searchUsers = (search: string, page: number, rowsPerPage: number) =
 
 
 
-export const getUserDetails = (id: number) => async (dispatch: any) => {
+export const getUserDetails = (screen_name: string) => async (dispatch: any) => {
 
   try {
     dispatch({ type: LOADING, payload: true })
-    const DATA = await API.getUserDetails(id);
+    const DATA = await API.getUserDetails(screen_name);
 
+    dispatch({ type: ERROR, payload: null })
     dispatch({ type: GET_USER_DETAILS, payload: DATA })
     dispatch({ type: LOADING, payload: false })
   } catch (e) {
