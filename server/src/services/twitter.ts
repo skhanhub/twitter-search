@@ -30,32 +30,32 @@ export default {
         page,
         count,
       })
-      const USER_LIST = users.map((user:any): IUserThin => ({
+      const userList = users.map((user:any): IUserThin => ({
         screen_name: user.screen_name,
         id: user.id,
         name: user.name,
       }))
 
-      return USER_LIST;
+      return userList;
     }
     catch(err){
       throw new Error(err);
     }
   },
-  getUserDetails: async function(id: any) {
+  getUserDetails: async function(screen_name: any) {
 
     try{
+      
       const user: any = await twitterGet(
         'users/show.json', 
         {
-          id
+          screen_name
         }
       );
-
-      const TWEETS: any = await twitterGet(
+      const tweets: any = await twitterGet(
         'statuses/user_timeline.json', 
         {
-          id: user.id,
+          id: user.screen_name,
           count: 5,
         }
       );
@@ -66,7 +66,7 @@ export default {
         screen_name: user.screen_name,
         profile_image_url_https: user.profile_image_url_https,
         followers_count: user.followers_count,
-        last_five_tweets: TWEETS.map((tweet: any)=>({
+        last_five_tweets: tweets.map((tweet: any)=>({
           id: tweet.id,
           tweet: tweet.text
         })),
