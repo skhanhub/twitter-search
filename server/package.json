@@ -17,8 +17,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/supertest": "^2.0.10",
     "jest": "^26.6.1",
     "nodemon": "^2.0.6",
+    "supertest": "^6.0.0",
     "ts-jest": "^26.4.3",
     "ts-node": "^9.0.0",
     "tslint": "^6.1.3",
