@@ -5,28 +5,30 @@ import path from 'path';
 import routes from './routes';
 
 // Port on which incoming requests will arrive
-const PORT = process.env.PORT || 3001;
+const port = process.env.PORT || 3001;
 // Create the application
-const APP = express();
+const app = express();
 
-const LOG_DIR = './logs';
-if (!fs.existsSync(LOG_DIR)){
-  fs.mkdirSync(LOG_DIR);
+const logDir = './logs';
+if (!fs.existsSync(logDir)){
+  fs.mkdirSync(logDir);
 }
 
-APP.use(logger('common', {
-    stream: fs.createWriteStream(path.join(LOG_DIR, 'access.log'), {flags: 'a'})
+app.use(logger('common', {
+    stream: fs.createWriteStream(path.join(logDir, 'access.log'), {flags: 'a'})
 }));
-APP.use(logger('dev'));
+app.use(logger('dev'));
 // support json encoded bodies
-APP.use(express.json());
+app.use(express.json());
 // support urlencode
-APP.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
+// Set the public static folder containing the front end template and logic
+app.use(express.static(path.join(__dirname, './public')));
 
 // Add routes, both API and view
-APP.use(routes);
+app.use(routes);
 
 // Run the web APP and store the returned variable for later export
-const SERVER = APP.listen(PORT, () => console.log(`Listening on ${PORT}`));
+const server = app.listen(port, () => console.log(`Listening on ${port}`));
 // Export the server for unit testing
-export default SERVER;
+export default server;
