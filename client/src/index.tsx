@@ -6,18 +6,15 @@ import logger from "redux-logger"
 import { Provider } from "react-redux"
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import rootReducer from "./store/reducers"
+import rootReducer from "./store/reducers";
 
 
-
-const store: any = () =>
+const store = () =>
   createStore(rootReducer, {}, applyMiddleware(reduxThunk, logger));
 
 ReactDOM.render(
-  <Provider store={store}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+  <Provider store={store()}>
+    <App />
   </Provider>,
   document.getElementById('root')
 );
