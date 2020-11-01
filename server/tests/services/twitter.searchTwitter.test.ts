@@ -3,7 +3,6 @@ import twitter from "../../src/services/twitter";
 
 jest.mock('twitter');
 
-type ICb = (err: any, res:any, body: any)=>any;
 describe("Tests for the searchTwitter function in the twitter service", () => {
   test("Should return an array of objects with specific values", async () => {
     //Arrange
