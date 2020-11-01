@@ -131,6 +131,13 @@ cd client
 npm start
 ```
 
+
+## Future Improvements
+
+1. Improve error handleing and css styles.
+2. More unit tests.
+3. Mock express res.sendFile() (Currently need to build the client for this route to work. Will crate a stub in the future)
+
 ## FAQ
 
 ## Credits
