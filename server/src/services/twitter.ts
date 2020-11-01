@@ -25,7 +25,7 @@ interface IUser {
 export default {
   searchTwitter: async function(query: any, page: any = 1, count: any = 5) {
     try{
-      const users: any = await twitterGet('users/search.json', {
+      const users: any = await twitterGet("users/search.json", {
         q: query,
         page,
         count,
@@ -47,13 +47,13 @@ export default {
     try{
       
       const user: any = await twitterGet(
-        'users/show.json', 
+        "users/show.json", 
         {
           screen_name
         }
       );
       const tweets: any = await twitterGet(
-        'statuses/user_timeline.json', 
+        "statuses/user_timeline.json", 
         {
           id: user.screen_name,
           count: 5,
