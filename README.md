@@ -19,10 +19,10 @@ Please visit https://developer.twitter.com/en/docs/twitter-api for more informat
 
 Set the following environment variables:
 ```
--  TWITTER_CONSUMER_KEY: Access Token
--  TWITTER_CONSUMER_SECRET: Access token secret 
--  TWITTER_ACCESS_TOKEN_KEY: API key
--  TWITTER_ACCESS_TOKEN_SECRET: API key secret
+-  TWITTER_CONSUMER_KEY: API key
+-  TWITTER_CONSUMER_SECRET: API key secret
+-  TWITTER_ACCESS_TOKEN_KEY: Access token
+-  TWITTER_ACCESS_TOKEN_SECRET: Access token secret
 ```
 
 build the static code
