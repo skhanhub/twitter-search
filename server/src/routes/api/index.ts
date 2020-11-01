@@ -1,7 +1,8 @@
 import express from "express";
 import usersRoutes from "./users";
 
-const ROUTER = express.Router();
-ROUTER.use("/users", usersRoutes);
+const router = express.Router();
+// Matches with "/api/users
+router.use("/users", usersRoutes);
 
-export default ROUTER;
+export default router;

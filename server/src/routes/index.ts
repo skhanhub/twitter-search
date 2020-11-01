@@ -2,14 +2,14 @@ import express from "express";
 import path from "path";
 import apiRoutes  from "./api";
 
-const ROUTER = express.Router();
+const router = express.Router();
 
 /*
   GET route for fetching the index.html home page
   This route does not take any arguments
   It returns the index.html page
 */
-ROUTER.get('/', async (req, res, next) => {
+router.get('/', async (req, res, next) => {
   try{
     console.log(path.join(__dirname, '../public'))
     res.status(200).sendFile(path.join(__dirname, '../public'));
@@ -20,6 +20,6 @@ ROUTER.get('/', async (req, res, next) => {
 })
 
 // API Routes
-ROUTER.use("/api", apiRoutes);
+router.use("/api", apiRoutes);
 
-export default ROUTER;
+export default router;
