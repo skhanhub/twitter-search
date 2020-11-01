@@ -1,9 +1,14 @@
 import { LOADING, ERROR, SEARCH_USERS, GET_USER_DETAILS } from "../types";
 
-interface IUserThin {
+export interface IUserThin {
   id: number;
   name: string;
   screen_name: string;
+}
+
+export interface ITweet{
+  tweet: string,
+  id: number,
 }
 
 interface IUser {
@@ -12,7 +17,7 @@ interface IUser {
   screen_name: string;
   profile_image_url_https: string;
   followers_count: number;
-  last_five_tweets: string[];
+  last_five_tweets: ITweet[];
 } 
 
 interface IState {
