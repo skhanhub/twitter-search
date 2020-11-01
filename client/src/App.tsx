@@ -19,7 +19,7 @@ function App() {
           {error && <h3 style={{color: 'red', textAlign: 'center'}}>{error}</h3>}
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/UserProfile/:id" component={UserProfile} />
+            <Route exact path="/UserProfile/:screen_name" component={UserProfile} />
             <Route component={NoMatch} />
           </Switch>
       </Router>
