@@ -5,7 +5,7 @@ jest.mock('twitter');
 describe("Tests for the twitterGet function in the utils service", () => {
   test("Should return an objects with specific values", async () => {
     //Arrange
-    // expect.assertions(3);
+    expect.assertions(3);
     const correctResult = {
         "name": "World Food Programme",
         "id": 27830610,
