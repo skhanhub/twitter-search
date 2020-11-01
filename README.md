@@ -20,7 +20,7 @@ Please visit https://developer.twitter.com/en/docs/twitter-api for more informat
 Set the following environment variables:
 ```
 -  TWITTER_CONSUMER_KEY: Access Token
--  TWITTER_CONSUMER_SECRET: Secret 
+-  TWITTER_CONSUMER_SECRET: Access token secret 
 -  TWITTER_ACCESS_TOKEN_KEY: API key
 -  TWITTER_ACCESS_TOKEN_SECRET: API key secret
 ```
