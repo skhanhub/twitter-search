@@ -9,6 +9,20 @@ describe('Test /api/users/show route', () => {
     server.close();
   });
 
+  // Need to build the client for this route to work. Will crate a stub in the future :)
+  test('Should loads the home page', async() => {
+
+    //Arrange
+    expect.assertions(1);
+
+    //Act
+    const RESULT = await request(server).get('/');
+
+    //Assert
+    expect(RESULT.status).toEqual(200);
+  });
+
+
   test('Should return a JSON object with screen_name property', async() => {
 
     //Arrange
