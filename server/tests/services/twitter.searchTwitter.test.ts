@@ -1,6 +1,5 @@
 import twitter from "../../src/services/twitter";
 
-
 jest.mock('twitter');
 
 describe("Tests for the searchTwitter function in the twitter service", () => {
