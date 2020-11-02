@@ -42,7 +42,7 @@ describe('Test /api/users/show route', () => {
 
 describe('Test /api/users/search route', () => {
 
-  afterAll(() => {
+  afterEach(() => {
     server.close();
   });
 
