@@ -1,13 +1,13 @@
 import { SEARCH, PAGE, ROWS_PER_PAGE } from "../types";
 
 interface IState {
-  search: string | null;
+  search: string;
   page: number;
   rowsPerPage: number;
 } 
 
-const initialState: IState = {
-  search: null,
+export const initialState: IState = {
+  search: '',
   page: 1,
   rowsPerPage: 5,
 }
