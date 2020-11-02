@@ -23,14 +23,14 @@ interface IUser {
 
 
 export default {
-  searchTwitter: async function(query: any, page: any = 1, count: any = 5) {
+  searchTwitter: async function(query: string, page: number = 1, count: number = 5) {
     try{
       const users: any = await twitterGet("users/search.json", {
         q: query,
         page,
         count,
       })
-      const userList = users.map((user:any): IUserThin => ({
+      const userList = users.map((user: any): IUserThin => ({
         screen_name: user.screen_name,
         id: user.id,
         name: user.name,
@@ -42,7 +42,7 @@ export default {
       throw new Error(err);
     }
   },
-  getUserDetails: async function(screen_name: any) {
+  getUserDetails: async function(screen_name: string) {
 
     try{
       
@@ -66,7 +66,7 @@ export default {
         screen_name: user.screen_name,
         profile_image_url_https: user.profile_image_url_https,
         followers_count: user.followers_count,
-        last_five_tweets: tweets.map((tweet: any)=>({
+        last_five_tweets: tweets.map((tweet: any): ITweet=>({
           id: tweet.id,
           tweet: tweet.text
         })),
