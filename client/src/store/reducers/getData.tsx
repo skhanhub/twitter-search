@@ -27,7 +27,7 @@ interface IState {
   error: string | null;
 } 
 
-const initialState: IState = {
+export const initialState: IState = {
   users: [],
   userDetails: null,
   loading: false,
