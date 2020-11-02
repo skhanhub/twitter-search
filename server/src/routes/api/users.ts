@@ -1,5 +1,5 @@
 import express from "express";
-const usersController = require("../../controllers/usersController");
+import usersController from "../../controllers/usersController";
 
 const router = express.Router();
 // Matches with "/api/users/search"
