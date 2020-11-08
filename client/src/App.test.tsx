@@ -11,15 +11,15 @@ const buildStore = configureStore([thunk]);
 
 
 describe("Tests for the App component", () => {
-  let store;
-  const initialState = {
-    getData: getDataState,
-    formControl: formControlState,
-  }
+
 
 
   it("Should have the text Twitter Search", () => {
-    store = buildStore(initialState);
+    const initialState = {
+      getData: getDataState,
+      formControl: formControlState,
+    }
+    let store = buildStore(initialState);
     const {queryByText} = render(<Provider store={store}><App /></Provider>)
     expect(queryByText(/Twitter Search/i)).toBeInTheDocument();
   });
