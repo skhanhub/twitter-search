@@ -54,6 +54,7 @@ function TwitterForm() {
           <TextField 
             variant="outlined" 
             value={search}
+            placeholder="search"
             onChange={(event)=>{
               event.preventDefault(); 
               dispatch(setSearchText(event.target.value));
@@ -63,6 +64,7 @@ function TwitterForm() {
             style={{margin: '0.5rem 1rem'}}
             variant="contained" 
             color="primary"
+            data-testid="searchButton"
             onClick={handleSearchUser}
           >
             Search
