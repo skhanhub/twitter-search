@@ -16,8 +16,6 @@ export const searchUsers = (search: string, page: number, rowsPerPage: number) =
   }
 }
 
-
-
 export const getUserDetails = (screen_name: string) => async (dispatch: any) => {
   try {
     dispatch({ type: LOADING, payload: true })

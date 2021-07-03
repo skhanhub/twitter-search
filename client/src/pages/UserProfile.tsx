@@ -69,7 +69,6 @@ export default function App() {
         </CardActions>
       </Card>:
       <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center' }}><CircularProgress  /></div>
-      
     }
   </>
   );
