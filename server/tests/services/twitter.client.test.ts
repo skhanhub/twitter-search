@@ -1,8 +1,8 @@
-import twitterGet from "../../src/services/utils";
+import twitterClient from "../../src/services/twitter.client";
 
 jest.mock('twitter');
 
-describe("Tests for the twitterGet function in the utils service", () => {
+describe("Tests for the twitterClient client", () => {
   test("Should return an objects with specific values", async () => {
     //Arrange
     expect.assertions(3);
@@ -13,7 +13,7 @@ describe("Tests for the twitterGet function in the utils service", () => {
     }
       
     //Act
-    const result: any = await twitterGet("users/show.json", {screen_name: "WFP"});
+    const result: any = await twitterClient.get("users/show.json", {screen_name: "WFP"});
 
     //Assert
     expect(result.name).toEqual(correctResult.name);
