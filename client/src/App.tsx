@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import { useSelector } from "react-redux"
@@ -6,12 +5,9 @@ import NoMatch from "./pages/NoMatch";
 import Home from "./pages/Home";
 import UserProfile from "./pages/UserProfile";
 
-
-
 function App() {
 
   const error = useSelector((state: any) => state.getData.error)
-
 
   return (
       <Router>

@@ -12,7 +12,7 @@ export const initialState: IState = {
   rowsPerPage: 5,
 }
 
-export default (state = initialState, action: any) => {
+const formControlReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case SEARCH:
       return { ...state, search: action.payload }
@@ -24,3 +24,5 @@ export default (state = initialState, action: any) => {
       return state
   }
 }
+
+export default formControlReducer;

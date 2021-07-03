@@ -1,4 +1,4 @@
-import React from 'react';
+import { ChangeEvent, MouseEvent } from 'react';
 import { useSelector, useDispatch } from "react-redux"
 import Card from "@material-ui/core/Card";
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -22,7 +22,7 @@ function ResultList() {
   const history = useHistory();
 
   const handleChangeRowsPerPage = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     dispatch(setRowsPerPage(parseInt(event.target.value, 10)));
     dispatch(setPageNumber(0));
@@ -52,7 +52,7 @@ function ResultList() {
         component="div"
         count={1000}
         page={page}
-        onChangePage={(event: React.MouseEvent<HTMLButtonElement> | null, newPage: number)=>dispatch(setPageNumber(newPage))}
+        onChangePage={(event: MouseEvent<HTMLButtonElement> | null, newPage: number)=>dispatch(setPageNumber(newPage))}
         rowsPerPage={rowsPerPage}
         onChangeRowsPerPage={handleChangeRowsPerPage}
         rowsPerPageOptions={[5, 10]}

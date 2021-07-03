@@ -2,7 +2,6 @@ import API from "../../utilities/API";
 import { LOADING, ERROR, SEARCH_USERS, GET_USER_DETAILS, SEARCH, PAGE, ROWS_PER_PAGE } from "../types";
 
 export const searchUsers = (search: string, page: number, rowsPerPage: number) => async (dispatch: any) => {
-
   try {
     dispatch({ type: LOADING, payload: true })
     if(search){
@@ -20,7 +19,6 @@ export const searchUsers = (search: string, page: number, rowsPerPage: number) =
 
 
 export const getUserDetails = (screen_name: string) => async (dispatch: any) => {
-
   try {
     dispatch({ type: LOADING, payload: true })
     const DATA = await API.getUserDetails(screen_name);

@@ -34,7 +34,7 @@ export const initialState: IState = {
   error: null,
 }
 
-export default (state = initialState, action: any) => {
+const getDataReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case LOADING:
       return { ...state, loading: action.payload }
@@ -48,3 +48,5 @@ export default (state = initialState, action: any) => {
       return state
   }
 }
+
+export default getDataReducer;
