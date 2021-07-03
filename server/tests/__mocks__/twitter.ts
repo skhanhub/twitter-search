@@ -60,13 +60,15 @@ const dataMap: any = {
 }
 export default class Twitter {
 
-  constructor(options: any){
-
-  };
+  constructor(options: any){};
 
   get(path: string, query: any){
     return new Promise((resolve, reject)=>{
-        resolve(dataMap[path])
+        if(query){
+            resolve(dataMap[path])
+        } else {
+            reject([ { code: 25, message: 'Query parameters are missing.' } ])
+        }
     })
   };
 }
