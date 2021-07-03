@@ -1,10 +1,10 @@
 import server from '../src/app';
 import request from "supertest";
+import { StatusCodes } from "http-status-codes";
 
 jest.mock('twitter');
 
-describe('Test /api/users/show route', () => {
-
+describe('Test / route', () => {
   afterEach(() => {
     server.close();
   });
@@ -19,7 +19,16 @@ describe('Test /api/users/show route', () => {
     const RESULT = await request(server).get('/');
 
     //Assert
-    expect(RESULT.status).toEqual(200);
+    expect(RESULT.status).toEqual(StatusCodes.OK);
+  });
+})
+
+
+
+describe('Test /api/users/show route', () => {
+
+  afterEach(() => {
+    server.close();
   });
 
 
@@ -29,15 +38,28 @@ describe('Test /api/users/show route', () => {
     expect.assertions(2);
 
     //Act
-    const result = await request(server).get('/api/users/show');
+    const result = await request(server).get('/api/users/show?q=we');
     const jsonData = await JSON.parse(result.text)
 
     //Assert
-    expect(result.status).toEqual(200);
+    expect(result.status).toEqual(StatusCodes.OK);
     expect(jsonData).toHaveProperty('screen_name');
   });
 
+  test('Should return BAD_REQUEST for missing query', async() => {
+
+    //Arrange
+    expect.assertions(1);
+
+    //Act
+    const result = await request(server).get('/api/users/show');
+
+    //Assert
+    expect(result.status).toEqual(StatusCodes.BAD_REQUEST);
+  });
 });
+
+
 
 
 describe('Test /api/users/search route', () => {
@@ -53,12 +75,23 @@ describe('Test /api/users/search route', () => {
     expect.assertions(2);
 
     //Act
-    const result = await request(server).get('/api/users/search');
+    const result = await request(server).get('/api/users/search?q=we');
     const jsonData = await JSON.parse(result.text)
 
     //Assert
-    expect(result.status).toEqual(200);
+    expect(result.status).toEqual(StatusCodes.OK);
     expect(jsonData.length).toEqual(5);
   });
 
+  test('Should return BAD_REQUEST for missing query', async() => {
+
+    //Arrange
+    expect.assertions(1);
+
+    //Act
+    const result = await request(server).get('/api/users/search');
+
+    //Assert
+    expect(result.status).toEqual(StatusCodes.BAD_REQUEST);
+  });
 });
