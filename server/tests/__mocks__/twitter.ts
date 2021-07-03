@@ -1,4 +1,4 @@
-import { response } from "express"
+import { MISSING_PARAMS } from "../../src/constant/error.constant"
 
 const dataMap: any = {
   'users/search.json': [
@@ -67,7 +67,7 @@ export default class Twitter {
         if(query){
             resolve(dataMap[path])
         } else {
-            reject([ { code: 25, message: 'Query parameters are missing.' } ])
+            reject([ { code: 25, message: MISSING_PARAMS } ])
         }
     })
   };
