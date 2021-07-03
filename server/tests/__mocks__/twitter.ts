@@ -1,3 +1,5 @@
+import { response } from "express"
+
 const dataMap: any = {
   'users/search.json': [
     {
@@ -62,11 +64,9 @@ export default class Twitter {
 
   };
 
-
-  get(path: string, query: any, callback: any){
-    callback(null, dataMap[path])
+  get(path: string, query: any){
+    return new Promise((resolve, reject)=>{
+        resolve(dataMap[path])
+    })
   };
-
-
-
 }
