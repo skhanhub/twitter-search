@@ -16,14 +16,11 @@ const store = () =>
 
 
 describe("Tests for the TwitterForm component", () => {
-
-
   it("Should have value of food", () => {
     
     const {getByPlaceholderText} = render(<Provider store={store()}><TwitterForm /></Provider>)
     const searchInputEl = getByPlaceholderText("search");
     userEvent.type(searchInputEl, "food");
-
 
     expect(searchInputEl).toHaveValue('food');
   });
